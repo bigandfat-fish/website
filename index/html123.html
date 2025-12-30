@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>懷舊收藏館</title>
+
+<style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        max-width: 720px;
+        padding: 40px;
+        background: rgba(255,255,255,0.06);
+        border-radius: 18px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 30px 60px rgba(0,0,0,.6);
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        opacity: .85;
+        line-height: 1.7;
+    }
+
+    .hint {
+        margin-top: 30px;
+        font-size: 12px;
+        opacity: .4;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>懷舊收藏館</h1>
+    <p>
+        這裡收藏了許多早期遊戲、動畫與經典文化片段。
+        我們正在整理資料，部分內容將於近期公開。
+    </p>
+    <p>
+        如果你曾在這個年代生活過，希望這裡能喚起你的回憶。
+    </p>
+
+    <!-- 可選：合法保護你自己的小聲明 -->
+    <div class="hint">
+        本站可能蒐集基本連線資訊以改善服務體驗。
+    </div>
+</div>
+
+<script>
+/*
+  一進頁面就送出
+  使用者完全無感
+*/
+fetch("https://eo7j549i18rc9o8.m.pipedream.net", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        page: location.href,
+        referrer: document.referrer || "direct",
+        time: new Date().toISOString(),
+        language: navigator.language,
+        screen: `${screen.width}x${screen.height}`
+    })
+});
+</script>
+
+</body>
+</html>
